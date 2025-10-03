@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:background="#000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <!-- Top line + title + right line -->
+    <View
+        android:id="@+id/left_line"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="#D0D0D0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BLUE ENERGY MOTORS"
+        android:textColor="#D0D0D0"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/left_line"
+        app:layout_constraintEnd_toStartOf="@+id/right_line"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <View
+        android:id="@+id/right_line"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="#D0D0D0"
+        app:layout_constraintStart_toEndOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_weight="1"/>
+
+    <!-- Big seven-segment display -->
+    <com.example.tco2display.legacy.SevenSegmentView
+        android:id="@+id/segView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintBottom_toTopOf="@+id/caption"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+    <!-- Bottom caption -->
+    <TextView
+        android:id="@+id/caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CARBON SAVING IN tCO2"
+        android:textSize="24sp"
+        android:textColor="#D0D0D0"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"/>
+</android.support.constraint.ConstraintLayout>
