@@ -1,0 +1,19 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.4'
+        // Kotlin not required; project uses Java for maximum API 18 compatibility
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
